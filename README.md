@@ -1,5 +1,10 @@
 # FastPay for Node.js
 
+[![NPM version](https://badge.fury.io/js/fastpay.svg)](http://badge.fury.io/js/fastpay)
+[![Build Status](https://secure.travis-ci.org/okuryu/node-fastpay.png?branch=master)](http://travis-ci.org/okuryu/node-fastpay)
+[![Dependency Status](https://gemnasium.com/okuryu/node-fastpay.svg)](https://gemnasium.com/okuryu/node-fastpay)
+[![Coverage Status](https://coveralls.io/repos/okuryu/node-fastpay/badge.png)](https://coveralls.io/r/okuryu/node-fastpay)
+
 ## Getting started
 
 Install via npm.
