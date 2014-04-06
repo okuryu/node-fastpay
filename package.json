@@ -1,0 +1,34 @@
+{
+  "name": "fastpay",
+  "version": "1.0.0",
+  "description": "FastPay for Node.js",
+  "main": "index",
+  "scripts": {
+    "pretest": "node_modules/jshint/bin/jshint *.js test/*.js",
+    "test": "node_modules/istanbul/lib/cli.js cover -- node_modules/.bin/_mocha test/*.js --reporter spec",
+    "lint": "node_modules/jshint/bin/jshint *.js test/*.js"
+  },
+  "author": "Ryuichi Okumura <okuryu@okuryu.com>",
+  "license": "BSD",
+  "dependencies": {
+    "request": "2.x.x"
+  },
+  "devDependencies": {
+    "chai": "1.x.x",
+    "echoecho": "0.x.x",
+    "istanbul": "0.x.x",
+    "jshint": "2.x.x",
+    "mocha": "1.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okuryu/node-fastpay.git"
+  },
+  "keywords": [
+    "fastpay"
+  ],
+  "bugs": {
+    "url": "https://github.com/okuryu/node-fastpay/issues"
+  },
+  "homepage": "https://github.com/okuryu/node-fastpay"
+}
