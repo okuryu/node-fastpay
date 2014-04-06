@@ -1,7 +1,7 @@
 # FastPay for Node.js
 
-[![Build Status](https://secure.travis-ci.org/okuryu/node-fastpay.png?branch=master)](http://travis-ci.org/okuryu/node-fastpay)
 [![NPM version](https://badge.fury.io/js/fastpay.svg)](http://badge.fury.io/js/fastpay)
+[![Build Status](https://travis-ci.org/okuryu/node-fastpay.svg?branch=master)](https://travis-ci.org/okuryu/node-fastpay)
 [![Dependency Status](https://gemnasium.com/okuryu/node-fastpay.svg)](https://gemnasium.com/okuryu/node-fastpay)
 
 ## Getting started
