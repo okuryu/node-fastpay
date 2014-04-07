@@ -9,7 +9,10 @@
     "lint": "node_modules/jshint/bin/jshint *.js test/*.js"
   },
   "author": "Ryuichi Okumura <okuryu@okuryu.com>",
-  "license": "BSD",
+  "license": {
+    "type": "BSD",
+    "url": "https://github.com/okuryu/node-fastpay/blob/master/LICENSE"
+  },
   "dependencies": {
     "request": "2.x.x"
   },
