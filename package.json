@@ -6,6 +6,7 @@
   "scripts": {
     "pretest": "node_modules/jshint/bin/jshint *.js test/*.js",
     "test": "node_modules/istanbul/lib/cli.js cover -- node_modules/.bin/_mocha test/*.js --reporter spec",
+    "coveralls": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "node_modules/jshint/bin/jshint *.js test/*.js"
   },
   "author": "Ryuichi Okumura <okuryu@okuryu.com>",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "chai": "1.x.x",
+    "coveralls": "2.x.x",
     "echoecho": "0.x.x",
     "istanbul": "0.x.x",
     "jshint": "2.x.x",
