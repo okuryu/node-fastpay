@@ -29,6 +29,10 @@ describe("Initialize Tests", function () {
         });
         expect(fp).to.be.an("object");
     });
+    it("string initialize", function () {
+        var fp = fastpay("test_api_key");
+        expect(fp).to.be.an("object");
+    });
     it("initialize with callback", function (done) {
         fastpay({
             apiKey: "test_api_key",

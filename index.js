@@ -132,14 +132,21 @@ FastPay.prototype.all = function (option, callback) {
 };
 
 function fastpay(option, callback) {
-    var fp;
-    if (typeof option !== "object") {
-        throw new Error("the option (object) is required.");
+    var fp,
+        opt;
+    if (typeof option === "string") {
+        opt = {
+            apiKey: option
+        };
+    } else if (typeof option === "object") {
+        if (typeof option.apiKey !== "string") {
+            throw new Error("the option.apiKey (string) is required.");
+        }
+        opt = option;
+    } else {
+        throw new Error("the option (object or string) is required.");
     }
-    if (typeof option.apiKey !== "string") {
-        throw new Error("the option.apiKey (string) is required.");
-    }
-    fp = new FastPay(option, callback);
+    fp = new FastPay(opt, callback);
     return fp;
 }
 

@@ -21,9 +21,7 @@ Callbacks has the error and response data via the [request](https://github.com/m
 ```js
 var fastpay = require("fastpay");
 
-fastpay({
-    apiKey: "YOUR_API_KEY"
-}, function (err, res, body) {
+fastpay("YOUR_API_KEY", function (err, res, body) {
     if (!err && res.statusCode === 200) {
         console.log(body);
     }
@@ -33,9 +31,7 @@ fastpay({
 ## Create a charge
 
 ```js
-fastpay({
-    apiKey: "YOUR_API_KEY"
-}).create({
+fastpay("YOUR_API_KEY").create({
     amount: 1000,
     card: "YOUR_CARD_ID"
 }, function (err, res, body) {
@@ -48,9 +44,7 @@ fastpay({
 ## Retrieve a charge
 
 ```js
-fastpay({
-    apiKey: "YOUR_API_KEY"
-}).retrieve("YOUR_CHARGE_ID", function (err, res, body) {
+fastpay("YOUR_API_KEY").retrieve("YOUR_CHARGE_ID", function (err, res, body) {
     if (!err && res.statusCode === 200) {
         console.log(body);
     }
@@ -60,9 +54,7 @@ fastpay({
 ## Refund a charge
 
 ```js
-fastpay({
-    apiKey: "YOUR_API_KEY"
-}).refund("YOUR_CHARGE_ID", function (err, res, body) {
+fastpay("YOUR_API_KEY").refund("YOUR_CHARGE_ID", function (err, res, body) {
     if (!err && res.statusCode === 200) {
         console.log(body);
     }
@@ -72,9 +64,7 @@ fastpay({
 ## Capture a charge
 
 ```js
-fastpay({
-    apiKey: "YOUR_API_KEY"
-}).capture("YOUR_CHARGE_ID", function (err, res, body) {
+fastpay("YOUR_API_KEY").capture("YOUR_CHARGE_ID", function (err, res, body) {
     if (!err && res.statusCode === 200) {
         console.log(body);
     }
@@ -84,9 +74,7 @@ fastpay({
 ## Retrieve all charge
 
 ```js
-fastpay({
-    apiKey: "YOUR_API_KEY"
-}).all({
+fastpay("YOUR_API_KEY").all({
     count: 1
 }, function (err, res, body) {
     if (!err && res.statusCode === 200) {
