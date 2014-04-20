@@ -9,7 +9,7 @@ FastPay for Node.js.
 
 ## Getting started
 
-Install via npm.
+Install to using NPM.
 
 ```
 $ npm install fastpay
@@ -110,6 +110,6 @@ See the [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-This module is available under the [BSD](LICENSE) license.
+This module is available under the [BSD license](LICENSE).
 
 The [request](https://github.com/mikeal/request) module is available under the Apache License 2.0.
