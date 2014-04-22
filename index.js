@@ -9,8 +9,8 @@ const BASE_REQUEST_URL = "https://fastpay.yahooapis.jp/v1/charges";
 
 function FastPay(option, callback) {
     this.apiKey = option.apiKey;
-    this.requestUrl = option.requestUrl || BASE_REQUEST_URL;
-    request(this.requestUrl, {
+    this._requestUrl = option._requestUrl || BASE_REQUEST_URL;
+    request(this._requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -41,7 +41,7 @@ FastPay.prototype.create = function (option, callback) {
     if (typeof option.capture === "boolean") {
         form.capture = option.capture;
     }
-    request.post(this.requestUrl, {
+    request.post(this._requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -59,8 +59,8 @@ FastPay.prototype.retrieve = function (id, callback) {
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
-    this.requestUrl += "/" + id;
-    request(this.requestUrl, {
+    this._requestUrl += "/" + id;
+    request(this._requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -77,8 +77,8 @@ FastPay.prototype.refund = function (id, callback) {
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
-    this.requestUrl += "/" + id + "/refund";
-    request.post(this.requestUrl, {
+    this._requestUrl += "/" + id + "/refund";
+    request.post(this._requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -98,8 +98,8 @@ FastPay.prototype.capture = function (id, callback) {
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
-    this.requestUrl += "/" + id + "/capture";
-    request.post(this.requestUrl, {
+    this._requestUrl += "/" + id + "/capture";
+    request.post(this._requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -117,7 +117,7 @@ FastPay.prototype.capture = function (id, callback) {
 
 FastPay.prototype.all = function (option, callback) {
     var qs = option || {};
-    request(this.requestUrl, {
+    request(this._requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
