@@ -104,9 +104,7 @@ See the [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Author
 
-| ![](https://s.gravatar.com/avatar/533a232628640bc2635e6d6e0fcb2528?s=80) |
-| --- |
-| [Ryuichi Okumura](http://www.okuryu.com/) |
+* [Ryuichi Okumura](http://www.okuryu.com/)
 
 ## License
 
