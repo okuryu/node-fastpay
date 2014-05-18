@@ -5,7 +5,7 @@
   "main": "index",
   "scripts": {
     "pretest": "node_modules/jshint/bin/jshint *.js test/*.js",
-    "test": "node_modules/.bin/_mocha -R spec",
+    "test": "node_modules/.bin/istanbul cover --report lcovonly node_modules/.bin/_mocha -- -R spec",
     "coveralls": "node_modules/.bin/istanbul cover --report lcovonly node_modules/.bin/_mocha -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls",
     "lint": "node_modules/jshint/bin/jshint *.js test/*.js"
   },
