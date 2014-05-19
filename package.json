@@ -18,12 +18,12 @@
     "request": "2.x.x"
   },
   "devDependencies": {
-    "chai": "1.x.x",
-    "coveralls": "2.x.x",
-    "echoecho": "0.x.x",
-    "istanbul": "0.x.x",
-    "jshint": "2.x.x",
-    "mocha": "1.x.x"
+    "chai": "^1.9.1",
+    "coveralls": "^2.10.0",
+    "echoecho": "^0.1.9",
+    "istanbul": "^0.2.10",
+    "jshint": "^2.5.1",
+    "mocha": "^1.19.0"
   },
   "repository": {
     "type": "git",
