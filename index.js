@@ -3,14 +3,17 @@ Copyright (c) 2014, Ryuichi Okumura. All rights reserved.
 Code licensed under the BSD License:
 https://github.com/okuryu/node-fastpay/blob/master/LICENSE
 */
+
+"use strict";
+
 var request = require("request");
 
-const BASE_REQUEST_URL = "https://fastpay.yahooapis.jp/v1/charges";
+var BASE_REQUEST_URL = "https://fastpay.yahooapis.jp/v1/charges";
 
 function FastPay(option, callback) {
     this.apiKey = option.apiKey;
-    this._requestUrl = option._requestUrl || BASE_REQUEST_URL;
-    request(this._requestUrl, {
+    this.requestUrl = option.requestUrl || BASE_REQUEST_URL;
+    request(this.requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -41,7 +44,7 @@ FastPay.prototype.create = function (option, callback) {
     if (typeof option.capture === "boolean") {
         form.capture = option.capture;
     }
-    request.post(this._requestUrl, {
+    request.post(this.requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -59,8 +62,8 @@ FastPay.prototype.retrieve = function (id, callback) {
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
-    this._requestUrl += "/" + id;
-    request(this._requestUrl, {
+    this.requestUrl += "/" + id;
+    request(this.requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -77,8 +80,8 @@ FastPay.prototype.refund = function (id, callback) {
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
-    this._requestUrl += "/" + id + "/refund";
-    request.post(this._requestUrl, {
+    this.requestUrl += "/" + id + "/refund";
+    request.post(this.requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -98,8 +101,8 @@ FastPay.prototype.capture = function (id, callback) {
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
-    this._requestUrl += "/" + id + "/capture";
-    request.post(this._requestUrl, {
+    this.requestUrl += "/" + id + "/capture";
+    request.post(this.requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""
@@ -117,7 +120,7 @@ FastPay.prototype.capture = function (id, callback) {
 
 FastPay.prototype.all = function (option, callback) {
     var qs = option || {};
-    request(this._requestUrl, {
+    request(this.requestUrl, {
         auth: {
             user: this.apiKey,
             pass: ""

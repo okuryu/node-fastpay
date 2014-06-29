@@ -4,14 +4,17 @@ Code licensed under the BSD License:
 https://github.com/okuryu/node-fastpay/blob/master/LICENSE
 */
 /*global describe, it*/
-var fastpay = require("../index"),
-    echoecho = require("echoecho").EchoEcho,
-    ee = new echoecho({all: true}),
-    http = require("http"),
-    expect = require("chai").expect,
-    server;
 
-const EE_BASE_URL = "http://127.0.0.1:8080";
+"use strict";
+
+var fastpay = require("../index"),
+    EchoEcho = require("echoecho").EchoEcho,
+    http = require("http"),
+    expect = require("chai").expect;
+
+var EE_BASE_URL = "http://127.0.0.1:8080",
+    ee = new EchoEcho({all: true}),
+    server;
 
 server = http.createServer(function (req, res) {
     if (ee.handle(req)) {
@@ -36,7 +39,7 @@ describe("Initialize Tests", function () {
     it("initialize with callback", function (done) {
         fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + "/echo/get?response=hello"
+            requestUrl: EE_BASE_URL + "/echo/get?response=hello"
         }, function (err, res, body) {
             expect(err).to.be.equal(null);
             expect(res.statusCode).to.be.equal(200);
@@ -58,7 +61,7 @@ describe("Create Charge Tests", function () {
     it("basic create charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}'
+            requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}"
         }).create({
             amount: 1000,
             card: "test_card_id"
@@ -68,7 +71,7 @@ describe("Create Charge Tests", function () {
     it("create charge with callback", function (done) {
         fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}'
+            requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}"
         }).create({
             amount: 1000,
             card: "test_card_id",
@@ -85,7 +88,7 @@ describe("Create Charge Tests", function () {
         expect(function () {
             fastpay({
                 apiKey: "test_api_key",
-                _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}'
+                requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}"
             }).create();
         }).to.throw(Error);
     });
@@ -93,7 +96,7 @@ describe("Create Charge Tests", function () {
         expect(function () {
             fastpay({
                 apiKey: "test_api_key",
-                _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}'
+                requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}"
             }).create({
                 amount: true
             });
@@ -103,7 +106,7 @@ describe("Create Charge Tests", function () {
         expect(function () {
             fastpay({
                 apiKey: "test_api_key",
-                _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}'
+                requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}"
             }).create({
                 amount: 1000,
                 card: true
@@ -116,14 +119,14 @@ describe("Retrieve Charge Tests", function () {
     it("basic retrieve charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/get?response={"id":1}&postfix='
+            requestUrl: EE_BASE_URL + "/echo/get?response={\"id\":1}&postfix="
         }).retrieve("test_charge_id");
         expect(fp).to.be.an("object");
     });
     it("retrieve charge with callback", function (done) {
         fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/get?response={"id":1}&postfix='
+            requestUrl: EE_BASE_URL + "/echo/get?response={\"id\":1}&postfix="
         }).retrieve("test_charge_id", function (err, res, body) {
             expect(err).to.be.equal(null);
             expect(res.statusCode).to.be.equal(200);
@@ -135,7 +138,7 @@ describe("Retrieve Charge Tests", function () {
         expect(function () {
             fastpay({
                 apiKey: "test_api_key",
-                _requestUrl: EE_BASE_URL + '/echo/get?response={"id":1}&postfix='
+                requestUrl: EE_BASE_URL + "/echo/get?response={\"id\":1}&postfix="
             }).retrieve();
         }).to.throw(Error);
     });
@@ -145,14 +148,14 @@ describe("Refund Charge Tests", function () {
     it("basic refund charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}&postfix='
+            requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}&postfix="
         }).refund("test_charge_id");
         expect(fp).to.be.an("object");
     });
     it("refund charge with callback", function (done) {
         fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}&postfix='
+            requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}&postfix="
         }).refund("test_charge_id", function (err, res, body) {
             expect(err).to.be.equal(null);
             expect(res.statusCode).to.be.equal(200);
@@ -164,7 +167,7 @@ describe("Refund Charge Tests", function () {
         expect(function () {
             fastpay({
                 apiKey: "test_api_key",
-                _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}&postfix='
+                requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}&postfix="
             }).refund();
         }).to.throw(Error);
     });
@@ -174,14 +177,14 @@ describe("Capture Charge Tests", function () {
     it("basic capture charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}&postfix='
+            requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}&postfix="
         }).capture("test_charge_id");
         expect(fp).to.be.an("object");
     });
     it("capture charge with callback", function (done) {
         fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}&postfix='
+            requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}&postfix="
         }).capture("test_charge_id", function (err, res, body) {
             expect(err).to.be.equal(null);
             expect(res.statusCode).to.be.equal(200);
@@ -193,7 +196,7 @@ describe("Capture Charge Tests", function () {
         expect(function () {
             fastpay({
                 apiKey: "test_api_key",
-                _requestUrl: EE_BASE_URL + '/echo/post?response={"id":1}&postfix='
+                requestUrl: EE_BASE_URL + "/echo/post?response={\"id\":1}&postfix="
             }).capture();
         }).to.throw(Error);
     });
@@ -203,14 +206,14 @@ describe("All Charge Tests", function () {
     it("basic all charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/get?response={"data":[]}'
+            requestUrl: EE_BASE_URL + "/echo/get?response={\"data\":[]}"
         }).all();
         expect(fp).to.be.an("object");
     });
     it("all charge with option", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/get?response={"data":[]}'
+            requestUrl: EE_BASE_URL + "/echo/get?response={\"data\":[]}"
         }).all({
             count: 1
         });
@@ -219,7 +222,7 @@ describe("All Charge Tests", function () {
     it("all charge with callback", function (done) {
         fastpay({
             apiKey: "test_api_key",
-            _requestUrl: EE_BASE_URL + '/echo/get?response={"data":[]}'
+            requestUrl: EE_BASE_URL + "/echo/get?response={\"data\":[]}"
         }).all({
             count: 1
         }, function (err, res, body) {

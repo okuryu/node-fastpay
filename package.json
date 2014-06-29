@@ -4,10 +4,9 @@
   "description": "FastPay for Node.js",
   "main": "index",
   "scripts": {
-    "pretest": "node_modules/jshint/bin/jshint *.js test/*.js",
+    "pretest": "node_modules/.bin/eslint -c .eslintrc.yml *.js test/*.js",
     "test": "node_modules/.bin/istanbul cover --report lcovonly node_modules/.bin/_mocha -- -R spec",
-    "coveralls": "node_modules/.bin/istanbul cover --report lcovonly node_modules/.bin/_mocha -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls",
-    "lint": "node_modules/jshint/bin/jshint *.js test/*.js"
+    "coveralls": "node_modules/.bin/istanbul cover --report lcovonly node_modules/.bin/_mocha -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls"
   },
   "author": "Ryuichi Okumura <okuryu@okuryu.com>",
   "license": {
@@ -21,8 +20,8 @@
     "chai": "^1.9.1",
     "coveralls": "^2.10.0",
     "echoecho": "^0.1.9",
+    "eslint": "^0.6.2",
     "istanbul": "^0.2.11",
-    "jshint": "^2.5.1",
     "mocha": "^1.20.1"
   },
   "repository": {
