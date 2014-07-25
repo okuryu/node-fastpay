@@ -2,17 +2,28 @@
   "name": "fastpay",
   "version": "1.1.0",
   "description": "FastPay for Node.js",
+  "keywords": [
+    "fastpay"
+  ],
+  "homepage": "https://github.com/okuryu/node-fastpay",
+  "bugs": {
+    "url": "https://github.com/okuryu/node-fastpay/issues"
+  },
+  "license": {
+    "type": "BSD",
+    "url": "https://github.com/okuryu/node-fastpay/blob/master/LICENSE"
+  },
+  "author": "Ryuichi Okumura <okuryu@okuryu.com>",
   "main": "index",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:okuryu/node-fastpay.git"
+  },
   "scripts": {
     "pretest": "eslint -c .eslintrc.yml *.js test/*.js",
     "test": "istanbul cover --report lcovonly _mocha -- -R spec",
     "precommit": "npm test",
     "coveralls": "istanbul cover --report lcovonly _mocha -- -R spec && cat coverage/lcov.info | coveralls"
-  },
-  "author": "Ryuichi Okumura <okuryu@okuryu.com>",
-  "license": {
-    "type": "BSD",
-    "url": "https://github.com/okuryu/node-fastpay/blob/master/LICENSE"
   },
   "dependencies": {
     "request": "2.x.x"
@@ -25,16 +36,5 @@
     "husky": "^0.6.0",
     "istanbul": "^0.3.0",
     "mocha": "^1.20.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:okuryu/node-fastpay.git"
-  },
-  "keywords": [
-    "fastpay"
-  ],
-  "bugs": {
-    "url": "https://github.com/okuryu/node-fastpay/issues"
-  },
-  "homepage": "https://github.com/okuryu/node-fastpay"
+  }
 }
