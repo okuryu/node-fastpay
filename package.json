@@ -21,7 +21,7 @@
   },
   "scripts": {
     "flatten": "package-json-flatten",
-    "pretest": "eslint -c .eslintrc.yml *.js test/*.js",
+    "pretest": "eslint *.js test/*.js",
     "test": "istanbul cover --report lcovonly _mocha -- -R spec",
     "precommit": "npm test",
     "coveralls": "istanbul cover --report lcovonly _mocha -- -R spec && cat coverage/lcov.info | coveralls"
