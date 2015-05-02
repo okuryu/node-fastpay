@@ -1,9 +1,9 @@
 # node-fastpay
 
-[![NPM version](https://badge.fury.io/js/fastpay.svg)](http://badge.fury.io/js/fastpay)
-[![Build Status](https://travis-ci.org/okuryu/node-fastpay.svg?branch=master)](https://travis-ci.org/okuryu/node-fastpay)
-[![Dependency Status](https://gemnasium.com/okuryu/node-fastpay.svg)](https://gemnasium.com/okuryu/node-fastpay)
-[![Coverage Status](https://img.shields.io/coveralls/okuryu/node-fastpay/master.svg)](https://coveralls.io/r/okuryu/node-fastpay?branch=master)
+[![NPM version](https://img.shields.io/npm/v/fastpay.svg?style=flat-square)](https://www.npmjs.com/package/fastpay)
+[![Build Status](http://img.shields.io/travis/okuryu/node-fastpay/master.svg?style=flat-square)](https://travis-ci.org/okuryu/node-fastpay)
+[![Dependency Status](https://img.shields.io/gemnasium/okuryu/node-fastpay.svg?style=flat-square)](https://gemnasium.com/okuryu/node-fastpay)
+[![Coverage Status](https://img.shields.io/coveralls/okuryu/node-fastpay.svg?style=flat-square)](https://coveralls.io/r/okuryu/node-fastpay?branch=master)
 
 FastPay for Node.js.
 
