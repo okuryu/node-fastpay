@@ -114,7 +114,7 @@ The [request] module is available under the Apache License 2.0.
 
 [npm Version Badge]: https://img.shields.io/npm/v/node-fastpay.svg?style=flat-square
 [npm Version]: https://www.npmjs.com/package/fastpay
-[Build Status Badge]: http://img.shields.io/travis/okuryu/node-fastpay/master.svg?style=flat-square
+[Build Status Badge]: https://img.shields.io/travis/okuryu/node-fastpay/master.svg?style=flat-square
 [Build Status]: https://travis-ci.org/okuryu/node-fastpay
 [Dependency Status Badge]: https://img.shields.io/gemnasium/okuryu/node-fastpay.svg?style=flat-square
 [Dependency Status]: https://gemnasium.com/okuryu/node-fastpay
