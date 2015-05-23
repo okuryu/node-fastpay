@@ -34,7 +34,7 @@
     "coveralls": "^2.11.2",
     "echoecho": "^0.1.9",
     "eslint": "^0.21.2",
-    "husky": "^0.7.0",
+    "husky": "^0.8.1",
     "istanbul": "^0.3.13",
     "mocha": "^2.2.4",
     "package-json-flatten": "^0.3.0"
