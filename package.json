@@ -9,10 +9,7 @@
   "bugs": {
     "url": "https://github.com/okuryu/node-fastpay/issues"
   },
-  "license": {
-    "type": "BSD",
-    "url": "https://github.com/okuryu/node-fastpay/blob/master/LICENSE"
-  },
+  "license": "BSD-3-Clause",
   "author": "Ryuichi Okumura <okuryu@okuryu.com>",
   "main": "index",
   "repository": {
