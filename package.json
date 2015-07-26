@@ -27,7 +27,7 @@
     "request": "^2.58.0"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
+    "chai": "^3.2.0",
     "coveralls": "^2.11.2",
     "echoecho": "^0.1.10",
     "eslint": "^1.0.0-rc-1",
