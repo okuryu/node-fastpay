@@ -4,13 +4,12 @@ Code licensed under the BSD License:
 https://github.com/okuryu/node-fastpay/blob/master/LICENSE
 */
 
-"use strict";
-
 var request = require("request");
 
 var BASE_REQUEST_URL = "https://fastpay.yahooapis.jp/v1/charges";
 
 function FastPay(option, callback) {
+    "use strict";
     this.apiKey = option.apiKey;
     this.requestUrl = option.requestUrl || BASE_REQUEST_URL;
     request(this.requestUrl, {
@@ -26,6 +25,7 @@ function FastPay(option, callback) {
 }
 
 FastPay.prototype.create = function (option, callback) {
+    "use strict";
     var form = {};
     if (typeof option !== "object") {
         throw new Error("the option (object) is required.");
@@ -59,6 +59,7 @@ FastPay.prototype.create = function (option, callback) {
 };
 
 FastPay.prototype.retrieve = function (id, callback) {
+    "use strict";
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
@@ -77,6 +78,7 @@ FastPay.prototype.retrieve = function (id, callback) {
 };
 
 FastPay.prototype.refund = function (id, callback) {
+    "use strict";
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
@@ -98,6 +100,7 @@ FastPay.prototype.refund = function (id, callback) {
 };
 
 FastPay.prototype.capture = function (id, callback) {
+    "use strict";
     if (typeof id !== "string") {
         throw new Error("the id (string) is required.");
     }
@@ -119,6 +122,7 @@ FastPay.prototype.capture = function (id, callback) {
 };
 
 FastPay.prototype.all = function (option, callback) {
+    "use strict";
     var qs = option || {};
     request(this.requestUrl, {
         auth: {
@@ -135,6 +139,7 @@ FastPay.prototype.all = function (option, callback) {
 };
 
 function fastpay(option, callback) {
+    "use strict";
     var fp,
         opt;
     if (typeof option === "string") {

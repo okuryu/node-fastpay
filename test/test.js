@@ -5,8 +5,6 @@ https://github.com/okuryu/node-fastpay/blob/master/LICENSE
 */
 /*global describe, it*/
 
-"use strict";
-
 var fastpay = require("../index"),
     EchoEcho = require("echoecho").EchoEcho,
     http = require("http"),
@@ -17,15 +15,17 @@ var EE_BASE_URL = "http://127.0.0.1:8080",
     server;
 
 server = http.createServer(function (req, res) {
+    "use strict";
     if (ee.handle(req)) {
         ee.serve(req, res);
     } else {
-        console.log("Bad Request");
+        throw new Error("Bad Request");
     }
 });
 server.listen(8080);
 
 describe("Initialize Tests", function () {
+    "use strict";
     it("basic initialize", function () {
         var fp = fastpay({
             apiKey: "test_api_key"
@@ -58,6 +58,7 @@ describe("Initialize Tests", function () {
 });
 
 describe("Create Charge Tests", function () {
+    "use strict";
     it("basic create charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
@@ -116,6 +117,7 @@ describe("Create Charge Tests", function () {
 });
 
 describe("Retrieve Charge Tests", function () {
+    "use strict";
     it("basic retrieve charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
@@ -145,6 +147,7 @@ describe("Retrieve Charge Tests", function () {
 });
 
 describe("Refund Charge Tests", function () {
+    "use strict";
     it("basic refund charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
@@ -174,6 +177,7 @@ describe("Refund Charge Tests", function () {
 });
 
 describe("Capture Charge Tests", function () {
+    "use strict";
     it("basic capture charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
@@ -203,6 +207,7 @@ describe("Capture Charge Tests", function () {
 });
 
 describe("All Charge Tests", function () {
+    "use strict";
     it("basic all charge", function () {
         var fp = fastpay({
             apiKey: "test_api_key",
