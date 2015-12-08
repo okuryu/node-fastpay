@@ -21,6 +21,7 @@
     "pretest": "eslint *.js test/*.js",
     "test": "istanbul cover --report lcovonly _mocha -- -R spec",
     "precommit": "npm test",
+    "prepublish": "npm test",
     "coveralls": "istanbul cover --report lcovonly _mocha -- -R spec && cat coverage/lcov.info | coveralls"
   },
   "dependencies": {
